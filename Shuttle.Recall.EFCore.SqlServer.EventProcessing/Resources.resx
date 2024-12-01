@@ -132,4 +132,7 @@
     <value>Could not find projection with name '{0}'.</value>
     <comment>0 = projection name</comment>
   </data>
+  <data name="SchemaOptionException" xml:space="preserve">
+    <value>No 'SqlServerEventProcessingOptions.Schema' has been specified.</value>
+  </data>
 </root>

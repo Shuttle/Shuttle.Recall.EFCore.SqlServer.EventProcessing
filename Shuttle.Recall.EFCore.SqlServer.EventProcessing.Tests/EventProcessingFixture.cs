@@ -20,8 +20,10 @@ public class EventProcessingFixture : RecallFixture
 
         await using (var dbContext = await dbContextFactory.CreateDbContextAsync())
         {
+#pragma warning disable EF1002
             await dbContext.Database.ExecuteSqlRawAsync($"delete from [{options.Schema}].[PrimitiveEvent] where Id in ('{OrderId}', '{OrderProcessId}')");
             await dbContext.Database.ExecuteSqlRawAsync($"delete from [{options.Schema}].[PrimitiveEventJournal] where Id in ('{OrderId}', '{OrderProcessId}')");
+#pragma warning restore EF1002
         }
 
         await ExerciseEventProcessingAsync(services, builder =>

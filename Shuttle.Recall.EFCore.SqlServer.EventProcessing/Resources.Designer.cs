@@ -95,5 +95,14 @@ namespace Shuttle.Recall.EFCore.SqlServer.EventProcessing {
                 return ResourceManager.GetString("ProjectionServiceTypeException", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No &apos;SqlServerEventProcessingOptions.Schema&apos; has been specified..
+        /// </summary>
+        internal static string SchemaOptionException {
+            get {
+                return ResourceManager.GetString("SchemaOptionException", resourceCulture);
+            }
+        }
     }
 }

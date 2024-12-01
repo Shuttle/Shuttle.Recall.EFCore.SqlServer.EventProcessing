@@ -14,6 +14,11 @@ public class SqlServerEventProcessingOptionsValidator : IValidateOptions<SqlServ
             return ValidateOptionsResult.Fail(Resources.ConnectionStringOptionException);
         }
 
+        if (string.IsNullOrWhiteSpace(options.Schema))
+        {
+            return ValidateOptionsResult.Fail(Resources.SchemaOptionException);
+        }
+
         return ValidateOptionsResult.Success;
     }
 }
